@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio de Sesión - EcoVida</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>♻️ EcoVida</h1>
+    <h2>Inicio de Sesión</h2>
+    <form onsubmit="return login()">
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" required>
+
+      <label for="clave">Contraseña:</label>
+      <input type="password" id="clave" required>
+
+      <button type="submit">Ingresar</button>
+    </form>
+    <p class="info">Usuario: <b>eco</b> | Contraseña: <b>1234</b></p>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById('usuario').value;
+      const pass = document.getElementById('clave').value;
+
+      if (user === 'eco' && pass === '1234') {
+        window.location.href = 'principal.html';
+        return false;
+      } else {
+        alert('Usuario o contraseña incorrectos');
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
